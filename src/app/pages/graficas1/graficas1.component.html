@@ -1,3 +1,61 @@
-<p>
-  graficas1 works!
-</p>
+ 
+  <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="text-center"> {{ graficos.grafico1.leyenda }} </h3>
+              <app-graficos-dona
+                  [chartData]= " graficos.grafico1.data "
+                  [chartLabels]= "graficos.grafico1.labels "
+                  [chartType]= "graficos.grafico1.type">
+              </app-graficos-dona>
+  
+          </div>
+        </div>        
+      </div>
+  
+      <div class="col-6">
+          <div class="card">
+            <div class="card-body">
+            <h3 class="text-center"> {{ graficos.grafico2.leyenda }} </h3>
+
+                <app-graficos-dona
+                    [chartData]= " graficos.grafico2.data "
+                    [chartLabels]= "graficos.grafico2.labels "
+                    [chartType]= "graficos.grafico2.type">
+                </app-graficos-dona>
+    
+            </div>
+          </div>        
+        </div>
+        <div class="col-6">
+            <div class="card">
+              <div class="card-body">
+            <h3 class="text-center"> {{ graficos.grafico3.leyenda }} </h3>
+                  <app-graficos-dona
+                      [chartData]= " graficos.grafico3.data "
+                      [chartLabels]= "graficos.grafico3.labels "
+                      [chartType]= "graficos.grafico3.type">
+                  </app-graficos-dona>
+      
+              </div>
+            </div>        
+          </div>
+          <div class="col-6">
+              <div class="card">
+                <div class="card-body">
+            <h3 class="text-center"> {{ graficos.grafico4.leyenda }} </h3>
+                    <app-graficos-dona
+                        [chartData]= " graficos.grafico4.data "
+                        [chartLabels]= "graficos.grafico4.labels "
+                        [chartType]= "graficos.grafico4.type">
+                    </app-graficos-dona>
+        
+                </div>
+              </div>        
+            </div>
+        
+  </div>
+ 
+     
+ 

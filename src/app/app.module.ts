@@ -12,16 +12,22 @@ import { RegisterComponent } from './login/register.component';
 // modulos personalizados
 import { PagesModule } from './pages/pages.module';
 
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent
+   
+    
   ],
   imports: [
     BrowserModule,
     PagesModule,
-    APP_ROUTER
+    APP_ROUTER,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
