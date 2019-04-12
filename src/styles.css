@@ -8,3 +8,13 @@
 .myColor{
     color: #ce3460;
 }
+#themecolors a{
+    cursor: pointer;
+}
+
+.megna-theme{
+    background: #eeb5c5;
+}
+.megna-dark-theme{
+    background:#8a1d59;
+}
