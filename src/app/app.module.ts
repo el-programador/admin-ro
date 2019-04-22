@@ -12,8 +12,12 @@ import { RegisterComponent } from './login/register.component';
 // modulos personalizados
 import { PagesModule } from './pages/pages.module';
 
+//importaciones necesarias para trabajar con formularios
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import { FormsModule } from '@angular/forms';
+
+// librerias
 
 @NgModule({
   declarations: [
@@ -27,9 +31,12 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     PagesModule,
     APP_ROUTER,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

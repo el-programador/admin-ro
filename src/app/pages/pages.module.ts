@@ -54,4 +54,5 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ]
 })
 
+
 export class PagesModule {}

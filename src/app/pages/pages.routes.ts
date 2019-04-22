@@ -8,12 +8,16 @@ import { AccountSettingComponent } from '../components/account-settings/account-
 import { PromesasComponent } from './promesas/promesas.component';
 import {  RxjsComponent } from './rxjs/rxjs.component';
 
+// guards
+import { LoginGuardsGuard } from '../services/service.index';
+
 
 
 const pagesRoutes: Routes = [
     { 
         path: '', 
         component: PagesComponent,
+        canActivate: [LoginGuardsGuard],
         children: [
     
           { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard', autor: 'Robert Mejia', description:'esta es la pagina de dashboar, es la primera pagina' } },
