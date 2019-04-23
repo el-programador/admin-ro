@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { UpFilesService } from '../upFiles/up-files.service';
 
 
 @Injectable({
@@ -21,7 +22,8 @@ export class UsuarioService {
 
   constructor(
      public http: HttpClient,
-     public router: Router
+     public router: Router,
+     public _upfileService: UpFilesService
   ) {
     this.cargarStorage();
    }
@@ -130,5 +132,49 @@ crearUsuario( usuario: Usuario ){
                   }));
 
  }
+
+ actualizarUsuario( usuario: Usuario ){
+
+  let url = URL_SERVICES + '/usuario/' + usuario._id ;
+  url += '?token=' + this.token;
+
+  return this.http.put( url, usuario )
+                  .pipe(map( (res:any)=>{
+                    
+                  let usuarioDB: Usuario = res.usuario;
+                  this.guardarStorage( usuarioDB._id, this.token, usuarioDB )
+
+                    Swal.fire(
+                      'Usuario Actualizado', 
+                      usuario.nombre,
+                      'success'
+                    );
+                    
+                    return true;
+                  }));
+
+ }
+
+
+ cmabiarImagen( archivo: File, id: string ){
+
+  this._upfileService.subirArchivo( archivo, 'usuarios', id )
+          .then((res:any)=>{
+           this.usuario.img = res.usuario.img;
+            Swal.fire(
+              'Imagen de Usuario Actualizada', 
+              this.usuario.nombre,
+             'success'
+            );
+          
+            this.guardarStorage( id, this.token, this.usuario );
+            //console.log( res );
+          })
+          .catch( err =>{
+            console.log(err);
+          });
+ }
+
+
 
 }

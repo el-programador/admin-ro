@@ -8,19 +8,25 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
+// pipes
+import { PiepesModule } from '../pipes/piepes.module';
+
+
 
 
 
 @NgModule({
     imports: [
         RouterModule,
-        CommonModule
+        CommonModule,
+        PiepesModule
     ],
     declarations: [
         NopagefoundComponent,
         HeaderComponent,
         SidebarComponent,
-        BreadcrumbsComponent
+        BreadcrumbsComponent,
+
     ],
     exports:[
         NopagefoundComponent,

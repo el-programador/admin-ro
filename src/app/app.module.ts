@@ -17,14 +17,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
+
 // librerias
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
-   
+    RegisterComponent,
     
   ],
   imports: [

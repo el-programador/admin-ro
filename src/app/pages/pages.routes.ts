@@ -10,6 +10,7 @@ import {  RxjsComponent } from './rxjs/rxjs.component';
 
 // guards
 import { LoginGuardsGuard } from '../services/service.index';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -26,6 +27,7 @@ const pagesRoutes: Routes = [
           { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promes', autor: 'Robert Mejia' }},
           { path: 'rxjs', component:  RxjsComponent, data: { titulo: 'Rxjs', autor: 'Robert Mejia' }},
           { path: 'account-setting', component: AccountSettingComponent, data: { titulo: 'Themes', autor: 'Robert Mejia' }},
+          { path: 'profile', component: ProfileComponent, data: { titulo: 'Profile' } },
           { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
       }
