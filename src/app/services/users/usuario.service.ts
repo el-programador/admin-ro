@@ -6,8 +6,8 @@ import { URL_SERVICES } from 'src/app/config/config';
 
 import { map } from 'rxjs/operators';
 
-
 import Swal from 'sweetalert2';
+
 import { Router } from '@angular/router';
 import { UpFilesService } from '../upFiles/up-files.service';
 
@@ -140,16 +140,17 @@ crearUsuario( usuario: Usuario ){
 
   return this.http.put( url, usuario )
                   .pipe(map( (res:any)=>{
-                    
-                  let usuarioDB: Usuario = res.usuario;
-                  this.guardarStorage( usuarioDB._id, this.token, usuarioDB )
 
+                    if (usuario._id === this.usuario._id) {
+                      let usuarioDB: Usuario = res.usuario;
+                      this.guardarStorage( usuarioDB._id, this.token, usuarioDB )                 
+                    }
+                    
                     Swal.fire(
                       'Usuario Actualizado', 
                       usuario.nombre,
                       'success'
-                    );
-                    
+                    );                    
                     return true;
                   }));
 
@@ -176,5 +177,30 @@ crearUsuario( usuario: Usuario ){
  }
 
 
+ cargarUsuarios( desde:number= 0 ){
+   let url = URL_SERVICES + '/usuario?desde=' + desde;
+    return this.http.get( url );
+ }
+
+ busquedaUsuarios( texto:string ){
+  let url = URL_SERVICES + '/busqueda/coleccion/usuarios/' + texto;
+  return this.http.get( url )
+  .pipe( map( (res:any) => res.usuarios ));
+ }
+
+
+ borrarUsuario( id: string){
+   let url = URL_SERVICES + '/usuario/' + id;
+   url += '?token=' + this.token;
+   return this.http.delete( url )
+               .pipe(map( res =>{
+                Swal.fire(
+                  'Usuario Borrado', 
+                  'El usuario ha sido borrado correctamente',
+                  'success'
+                );    
+                return true;
+               }));
+ }
 
 }

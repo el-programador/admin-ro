@@ -7,3 +7,5 @@ export { SharedService } from './shared.service';
 export { SidebarService } from './sidebar.service';
 export { UsuarioService } from './users/usuario.service';
 export { UpFilesService } from './upFiles/up-files.service';
+export { ModalUploadService } from './upFiles/modal-upload.service';
+

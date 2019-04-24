@@ -7,10 +7,14 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSettingComponent } from '../components/account-settings/account-setting.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import {  RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
 
 // guards
 import { LoginGuardsGuard } from '../services/service.index';
-import { ProfileComponent } from './profile/profile.component';
+
 
 
 
@@ -28,6 +32,11 @@ const pagesRoutes: Routes = [
           { path: 'rxjs', component:  RxjsComponent, data: { titulo: 'Rxjs', autor: 'Robert Mejia' }},
           { path: 'account-setting', component: AccountSettingComponent, data: { titulo: 'Themes', autor: 'Robert Mejia' }},
           { path: 'profile', component: ProfileComponent, data: { titulo: 'Profile' } },
+          // MAntenimiento
+          { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento Usuarios' } },
+          { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimiento Medicos' } },
+          { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento Hospitales' } },
+          
           { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
       }

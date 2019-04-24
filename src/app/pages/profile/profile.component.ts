@@ -26,17 +26,7 @@ export class ProfileComponent implements OnInit {
   }
 
   
-  guardar( usuario: Usuario ){
-    this.usuario.nombre = usuario.nombre;
-    // los correos de google no estan permitidos actualizar
-    if (!this.usuario.google) {  
-      this.usuario.email = usuario.email;
-    }
-
-    this._usuarioService.actualizarUsuario( this.usuario )
-    .subscribe();
-  }
-  
+ 
   seleccionImagen( archivo: File ){
     if ( !archivo ) {
       this.imagenSubir = null; //sino seleciona nada
@@ -63,6 +53,20 @@ export class ProfileComponent implements OnInit {
     reader.onloadend = () => this.imgTemp = reader.result;
 
   }
+
+
+  guardar( usuario: Usuario ){
+    this.usuario.nombre = usuario.nombre;
+    // los correos de google no estan permitidos actualizar
+    if (!this.usuario.google) {  
+      this.usuario.email = usuario.email;
+    }
+    this._usuarioService.actualizarUsuario( this.usuario )
+    .subscribe();
+  }
+  
+
+
   
 //mustra la imagen el usario puede subirlo o no despues de pre view
   cambiarImagen(){

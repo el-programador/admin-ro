@@ -10,6 +10,10 @@ import { ProgressComponent } from './progress/progress.component';
 import { ProfileComponent } from './profile/profile.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { PagesComponent } from './pages.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { ModalUploadsComponent } from '../components/modal-uploads/modal-uploads.component';
 
 // RUTAS
 import {  PAGES_ROUTER } from './pages.routes';
@@ -41,7 +45,11 @@ import { PiepesModule } from '../pipes/piepes.module';
     AccountSettingComponent,
     PromesasComponent,
     RxjsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsuariosComponent,
+    MedicosComponent,
+    HospitalesComponent,
+    ModalUploadsComponent
     ],
 
     exports: [
@@ -49,7 +57,8 @@ import { PiepesModule } from '../pipes/piepes.module';
         ProgressComponent,
         Graficas1Component, 
         PagesComponent, 
-        SharedModule
+        SharedModule,
+        ModalUploadsComponent
        
     ],
     imports:[
