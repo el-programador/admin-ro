@@ -31,6 +31,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 
 // pipes
 import { PiepesModule } from '../pipes/piepes.module';
+import { MedicoComponent } from './medicos/medico.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { PiepesModule } from '../pipes/piepes.module';
     UsuariosComponent,
     MedicosComponent,
     HospitalesComponent,
-    ModalUploadsComponent
+    ModalUploadsComponent,
+    MedicoComponent
     ],
 
     exports: [

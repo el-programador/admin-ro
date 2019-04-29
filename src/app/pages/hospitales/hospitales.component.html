@@ -1,3 +1,100 @@
-<p>
-  hospitales works!
-</p>
+
+
+<div class="row animated fadeIn">
+  <div class="col-12">
+      <div class="card">
+          <div class="card-body">
+      
+            <input #input (keyup)="buscarHospital( input.value )" type="text" class="form-control" 
+            placeholder="Search Hospital...">
+            
+      
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="cargando"  class="row animated fadeIn">
+<div class="col-sm-12">
+  <div class="alert alert-warning text-center">
+    <strong> Cargando...</strong>
+    <br>
+    <i class="fa fa-refresh fa-spin fa-2x"></i>
+    <br>
+    <span>Waiting plese</span>
+  </div>
+</div>
+</div>
+
+<div *ngIf="!cargando" class="row animated fadeIn">
+  <div class="col-12">
+      <div class="card">
+          <div class="card-body">
+
+              <div align="right">
+                  <button type="button" class="btn btn-primary dropdown-toggle" 
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-plus"> Create New Hospital</i>
+                  </button>
+                  <div class="dropdown-menu col-md-8">
+                      <h3 class="box-title m-b-0 ml-4" > Crear Hospital: {{hospital.nombre }} </h3>
+                      <form #f ngNativeValidate (submit)="crearHospital( f )">  
+
+                          <div class="form-group m-2">                                  
+                            <input [(ngModel)]="hospital.nombre" name="nombre" class="form-control" type="text" required placeholder="Name Hospital">
+                          </div>        
+                          <div class="form-group text-center m-t-20">
+                            <button  class="btn btn-success" type="submit">
+                              <i class="fa fa-plus"> Create </i>
+                            </button>                                                                   
+                          </div>      
+                  </form>
+                   
+                  
+                   
+                  </div>
+                </div>
+
+
+          
+            
+            
+            
+
+          <h3 class="card-title">Hospitales Registrados (<small> {{ totalRegistros }} </small> ) </h3>             
+              <table class="table table-dark table-hover">
+                <thead>
+                  <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th> </th>                      
+                  </tr>                  
+                </thead>
+                <tbody>
+                  <tr *ngFor="let hospital of hospitales">
+                      <td>
+                        <img (click)="modalActualizarImg( hospital )"
+                              [src]="hospital.img | imagen: 'hospital'" class="w50 img-circle pointer"> 
+                      </td>                        
+                      <td>
+                        <input  [(ngModel)]="hospital.nombre" name="hospital" type="text" class="form-control"> 
+                      </td>
+                      <button (click)="guardarHospital( hospital )"
+                              type="button" class="btn btn-success btn-sm mt-3">
+                        <i class="fa fa-save"></i>
+                      </button>
+                      <button (click)="borrarHospital( hospital )"
+                              type="button" class="btn btn-danger btn-sm ml-2 mt-3">
+                          <i class="fa fa-trash-o"></i>
+                      </button>
+                  </tr>                    
+                </tbody>
+              </table>  
+
+                  <button (click)="cambiarDesde(-5)"  class="btn btn-outline-success">Before</button>                
+                  <button  (click)="cambiarDesde(5)"  class="btn btn-outline-success ml-5 ">Next</button>
+    
+          </div>
+      </div>
+  </div>
+</div>
