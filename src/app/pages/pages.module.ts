@@ -32,6 +32,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 // pipes
 import { PiepesModule } from '../pipes/piepes.module';
 import { MedicoComponent } from './medicos/medico.component';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { MedicoComponent } from './medicos/medico.component';
     MedicosComponent,
     HospitalesComponent,
     ModalUploadsComponent,
-    MedicoComponent
+    MedicoComponent,
+    BuscadorComponent
     ],
 
     exports: [

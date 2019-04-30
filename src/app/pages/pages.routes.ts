@@ -12,9 +12,11 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 // guards
 import { LoginGuardsGuard } from '../services/service.index';
+import { AdminGuard } from '../services/guards/admin.guard';
 
 
 
@@ -33,8 +35,13 @@ const pagesRoutes: Routes = [
           { path: 'rxjs', component:  RxjsComponent, data: { titulo: 'Rxjs', autor: 'Robert Mejia' }},
           { path: 'account-setting', component: AccountSettingComponent, data: { titulo: 'Themes', autor: 'Robert Mejia' }},
           { path: 'profile', component: ProfileComponent, data: { titulo: 'Profile' } },
+          { path: 'search/:texto', component: BuscadorComponent, data: { titulo: 'Buscador' } },
           // MAntenimiento
-          { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento Usuarios' } },
+          { 
+            path: 'usuarios', component: UsuariosComponent,
+            canActivate: [ AdminGuard ],
+            data: { titulo: 'Mantenimiento Usuarios' } },
+
           { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimiento Medicos' } },
           { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Mantenimiento Medico' } },
           { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento Hospitales' } },

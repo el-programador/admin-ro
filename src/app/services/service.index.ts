@@ -1,6 +1,7 @@
 
 
-
+//guards
+export { AdminGuard } from './guards/admin.guard';
 export { LoginGuardsGuard } from './guards/login-guards.guard';
 
 export { SettingsService } from './settings.service';

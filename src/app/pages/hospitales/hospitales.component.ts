@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hospital } from 'src/app/models/hospital.model';
 import { HospitalService } from 'src/app/services/service.index';
-import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { ModalUploadService } from '../../services/upFiles/modal-upload.service';
 
 import Swal from 'sweetalert2';
