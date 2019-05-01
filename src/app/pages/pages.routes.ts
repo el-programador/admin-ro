@@ -15,20 +15,20 @@ import { HospitalesComponent } from './hospitales/hospitales.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 
 // guards
-import { LoginGuardsGuard } from '../services/service.index';
+import { LoginGuardsGuard, VerificaTokenGuard } from '../services/service.index';
 import { AdminGuard } from '../services/guards/admin.guard';
 
 
 
 
 const pagesRoutes: Routes = [
-    { 
-        path: '', 
-        component: PagesComponent,
-        canActivate: [LoginGuardsGuard],
-        children: [
-    
-          { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard', autor: 'Robert Mejia', description:'esta es la pagina de dashboar, es la primera pagina' } },
+
+          { 
+            path: 'dashboard', 
+            component: DashboardComponent,
+            canActivate: [ VerificaTokenGuard ],
+            data: { titulo: 'Dashboard', autor: 'Robert Mejia', description:'esta es la pagina de dashboar, es la primera pagina' } 
+          },
           { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress', autor: 'Robert Mejia' }},
           { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas', autor: 'Robert Mejia', description: 'contiene unas grafiacas interesantes' }},
           { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promes', autor: 'Robert Mejia' }},
@@ -47,9 +47,7 @@ const pagesRoutes: Routes = [
           { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento Hospitales' } },
           
           { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
-        ]
-      }
-];
+        ];
 
 
   export const PAGES_ROUTER = RouterModule.forChild(pagesRoutes);

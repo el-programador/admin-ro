@@ -38,9 +38,9 @@ import { BuscadorComponent } from './buscador/buscador.component';
 @NgModule({
     declarations: [
         
+    // PagesComponent,
     DashboardComponent,
     ProgressComponent,
-    PagesComponent,
     Graficas1Component,
     IncrementadorComponent,
     GraficosDonaComponent,
@@ -51,7 +51,7 @@ import { BuscadorComponent } from './buscador/buscador.component';
     UsuariosComponent,
     MedicosComponent,
     HospitalesComponent,
-    ModalUploadsComponent,
+    // ModalUploadsComponent,
     MedicoComponent,
     BuscadorComponent
     ],
@@ -60,7 +60,7 @@ import { BuscadorComponent } from './buscador/buscador.component';
         DashboardComponent,
         ProgressComponent,
         Graficas1Component, 
-        PagesComponent, 
+        // PagesComponent, 
         SharedModule,
         ModalUploadsComponent
        

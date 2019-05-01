@@ -10,6 +10,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 // pipes
 import { PiepesModule } from '../pipes/piepes.module';
+import { ModalUploadsComponent } from '../components/modal-uploads/modal-uploads.component';
 
 
 
@@ -26,13 +27,16 @@ import { PiepesModule } from '../pipes/piepes.module';
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
-
+        ModalUploadsComponent
+        
     ],
     exports:[
         NopagefoundComponent,
         HeaderComponent,
         SidebarComponent,
-        BreadcrumbsComponent
+        BreadcrumbsComponent,
+        ModalUploadsComponent
+
     ],
 })
 

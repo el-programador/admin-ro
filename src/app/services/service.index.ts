@@ -3,6 +3,8 @@
 //guards
 export { AdminGuard } from './guards/admin.guard';
 export { LoginGuardsGuard } from './guards/login-guards.guard';
+export { VerificaTokenGuard } from './guards/verifica-token.guard';
+
 
 export { SettingsService } from './settings.service';
 export { SharedService } from './shared.service';
